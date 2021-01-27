@@ -71,6 +71,7 @@ public class DoorController : MonoBehaviour
     public void PlayerInteract(Vector3 position)
     {
         if (animIsPlaying) return; // Skips everything else in the function
+        if (!Inventory.main.hasKey) return;
 
         Vector3 disToPlayer = position - transform.position;
 
@@ -83,6 +84,8 @@ public class DoorController : MonoBehaviour
             doorAngle = 90;
             if (playerOnOtherSide) doorAngle = -90;
         }
+
+        // if (!isClosed) doorAngle = (playerOnOtherSide) ? -90 : 90; // Turnary Operator Google.
 
         isClosed = !isClosed; // toggles the state
         
