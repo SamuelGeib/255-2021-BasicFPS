@@ -14,11 +14,15 @@ public class PlayerMovement : MonoBehaviour
 
     float cameraPitch = 0;
 
+  
+
     // Start is called before the first frame update
     void Start()
     {
         pawn = GetComponent<CharacterController>();
         cam = GetComponentInChildren<Camera>();
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
 
 
     }
